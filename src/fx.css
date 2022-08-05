@@ -1,0 +1,126 @@
+#scd_dupefinder_title {
+	font-size:28px;
+	color:#0;
+	font-family: "Nunito",trebuchet ms;
+	font-weight:700;
+	margin-bottom:50px;
+}
+
+#scd_dupefinder {
+	width:100%;
+	text-align:center;
+}
+
+#scd_dupefinder > ul {
+	display: inline-block;
+  margin:0;
+  padding:0;
+  text-align: center;
+ 	list-style :none ;
+  width :85% ;
+}
+
+#scd_dupefinder .scd_post {
+	list-style:none ;
+	font-size:14px ;
+	line-height:20px ;
+	float: none ;
+	clear:both;
+	display: none ;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+#scd_dupefinder .scd_post a div {
+	float:left ;
+	width: 111px ;
+	padding-right:18px ;
+	font-size:34px ;
+	line-height:15px ;
+	padding-top:10px ;
+	text-align:center;
+	margin: 0 0 0 0;
+}
+
+#scd_dupefinder .scd_post a div span {
+	font-size:12px ;
+}
+
+#scd_dupefinder .scd_post div {
+	float:left;
+	width:65%;
+	padding-right:18px;
+	font-size:16px;
+	line-height:20px;
+	text-align:left;
+	margin: 0 0 0 0;
+}
+
+#scd_dupefinder .scd_post > :nth-child(3) div {
+	float:right;
+	width:146px;
+	font-size:14px;
+	line-height: 20px;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+@media (max-width:900px) {
+	#scd_dupefinder > ul {
+		width:100%;
+	}
+	#scd_dupefinder .scd_post div {
+		width:70%;
+	}
+}
+
+
+@media (max-width:800px) {
+	
+	#scd_dupefinder > ul {
+	  margin:0 auto;
+	  padding:0;
+	  text-align: center;
+	 	list-style :none ;
+	  width: 95% ;
+	}
+	
+	#scd_dupefinder .scd_post div {
+		float:left;
+		width:85%;
+		font-size:16px;
+		line-height:20px;
+		text-align:left;
+		padding: 0 0 0 0;
+		margin: 0 0 0 72px;
+		z-index: 30;
+		position: relative;
+	}
+	
+	#scd_dupefinder .scd_post a div {
+		float:left ;
+		width: 111px ;
+		padding-right: 0px ;
+		margin: 0 0 0 0;
+		font-size:34px ;
+		line-height:15px ;
+		padding-top:10px ;
+		text-align:center;
+		position:absolute;
+		z-index:20;
+		left:-22px;
+	}
+	
+	#scd_dupefinder .scd_post > :nth-child(3) div {
+		float:right;
+		width:80px;
+		font-size:14px;
+		line-height: 20px;
+		position:absolute;
+		z-index:10;
+		left:-21px;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+	}
+	
+}

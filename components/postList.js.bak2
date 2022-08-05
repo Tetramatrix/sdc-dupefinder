@@ -1,0 +1,96 @@
+//const $ = window.$;
+const { Component, render } = wp.element;
+//import React, { Component } from 'react';
+import axios from 'axios';
+//import { Link } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+class PostList extends Component {
+	
+  constructor(props) {
+    super(props);
+    this.state = {
+    	btnText : "Load More...",
+    	isLoaded : false,
+      start : 0,
+      limit : 5,
+      posts: [],           
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.createMarkup = this.createMarkup.bind();
+  }
+  
+  componentDidUpdate() {
+  	 //debugger;
+  	 window.jQuery("#scd_dupefinder ul li").slideDown();
+  	 document.getElementById("scd_dupefinder").getElementsByTagName('button')[0].innerHTML=this.state.btnText;
+  }
+  
+  componentDidMount() {
+  	//debugger;
+  	this.state.isLoaded = false;
+  	var params = new FormData();
+		params.append('action', 'dupefinderList');
+		params.append('start', this.state.start );
+ 		params.append('limit', this.state.limit );
+ 		params.append('post_id', scd_post_id) ;
+ 		//console.log(params);
+    axios.post (scd_ajaxurl, params).then(
+    response => {
+    	  //debugger;
+    	  //console.log(response);
+        this.setState({
+        	btnText : "Load More...",
+	        isLoaded: true,
+	       	start: this.state.start+=5,
+	        posts: this.state.posts.concat(JSON.parse(response.data))
+				});
+    }, (error) => {
+  			console.log(error);
+  	});
+  }
+  
+  handleSubmit(e) {
+       e.preventDefault();  
+       document.getElementById("scd_dupefinder").getElementsByTagName('button')[0].innerHTML='<span class="spinner-border spinner-border-sm"></span> Loading...';
+       this.componentDidMount();
+    }
+    
+  createMarkup(html) {
+    return { __html: html };
+  }
+  render() {  	
+  	if (this.state.isLoaded==false) {
+  		return ( 
+  			<div>
+				<Spinner animation="border" variant="primary" role="status">
+				  <span className="visually-hidden"></span>
+				</Spinner><span style={{"font-size":"20px","font-weight":"bolder","vertical-align": "top"}}> Loading...</span>
+				</div>
+      );
+  	} else {  		  
+  		    return (
+			      <ul style={{"list-style":"none","max-width":"100%"}}>
+			        {this.state.posts.map(post => (          
+			           <li style={{"list-style":"none","font-size":"14px","line-height":"20px",float:"none","display": "none"}}>
+					   			<a alt="alt" href={post.permalink}>
+					   				<div style={{"float":"left","width" :"96px","padding-right":"18px","font-size":"34px","line-height":"15px","padding-top":"5px"}}>{post.percentage}%<br/><span style={{"font-size":"12px"}}>match</span></div>
+					   			</a>
+					  	 		<div style={{"float":"left","width":"60%","padding-right":"18px","font-size":"18px","line-height":"20px","text-align":"left"}}><a alt="alt" href={post.permalink}>{post.post_title}</a>			   
+						   		<p style={{"font-size":"12px","line-height":"20px"}}> Also
+						   		contains:{post.in_common.join(',')} ... <a href={post.permalink}>See
+						   		more</a> </p> </div> 	<a alt="alt" href={post.permalink}> <div
+						   		style={{"float":"right","width":"150px","font-size":"14px","line-height": "20px"}}
+						   		 dangerouslySetInnerHTML={this.createMarkup(post.image)}
+					   			/></a>
+					   			<div style={{"clear":"both"}}></div>
+			         </li>
+			        ))}
+			          <form onSubmit={this.handleSubmit}><button class="btn btn-primary">{this.state.btnText}</button></form>
+			      </ul>
+			    );
+  		}
+  }
+}
+export default PostList;
