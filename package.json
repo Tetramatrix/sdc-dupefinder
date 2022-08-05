@@ -1,7 +1,7 @@
 {
-  "name": "scd_dupefinder",
+  "name": "super_speedy_product_matcher",
   "version": "1.0.0",
-  "description": "A fully scalable recommendation system",
+  "description": "A fully scalable product matcher",
   "main": "index.js",
   "scripts": {
     "build": "wp-scripts build",
