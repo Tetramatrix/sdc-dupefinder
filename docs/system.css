@@ -9,7 +9,6 @@ h2 {
   vertical-align:top;
 }
 
-
 h3 {
   padding: 0px;
   text-decoration: underline;
@@ -19,6 +18,7 @@ h3 {
   /* color: #7f7f7f; */
   /* color: rgb(191, 191, 191); */
   vertical-align:top;
+}
 
 p {
 	text-decoration: none;
