@@ -9,13 +9,8 @@ h1 {
   vertical-align:top;
 }
 
-img {
-	padding: 0px;
-  margin: 0px;
-	vertical-align:top;
-	float:right;
-}
-p {
+
+.img {
   padding: 0px;
   margin: 0px;
   text-decoration: none;
@@ -25,4 +20,6 @@ p {
   /* color: #7f7f7f; */
   /* color: rgb(191, 191, 191); */
   vertical-align:top;
+  height: 1%;
+  
 }
