@@ -35,6 +35,9 @@ img {
   margin: 0px;
   vertical-align:top;
 }
+img:hover {
+	transform: scale(1.0);
+}
 
 .img {
   padding: 0px;
