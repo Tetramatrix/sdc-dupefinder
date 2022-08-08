@@ -1,0 +1,22 @@
+.h1 {
+  padding: 0px;
+  text-decoration: none;
+  font-family:  'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 21px;
+  font-weight: normal;
+  /* color: #7f7f7f; */
+  /* color: rgb(191, 191, 191); */
+  vertical-align:top;
+}
+
+
+.p {
+  padding: 0px;
+  text-decoration: none;
+  font-family:  'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 14px;
+  font-weight: normal;
+  /* color: #7f7f7f; */
+  /* color: rgb(191, 191, 191); */
+  vertical-align:top;
+}
