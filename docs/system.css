@@ -9,7 +9,12 @@ h1 {
   vertical-align:top;
 }
 
-
+img {
+	padding: 0px;
+  margin: 0px;
+	vertical-align:top;
+	float:right;
+}
 p {
   padding: 0px;
   margin: 0px;
