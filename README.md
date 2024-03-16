@@ -1,2 +1,2 @@
-# super_speedy_product_matcher
+# SDC Dupefinder
 A fully scalable WordPress product matcher plugin.
