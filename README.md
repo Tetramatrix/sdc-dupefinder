@@ -1,9 +1,10 @@
 # SDC Dupefinder
+=================
 A fully scalable WordPress product matcher plugin.
 
 License: GPLv2 or later
-
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
 
 Installation
 1. Download and save the plugin into the WordPress plugin folder and enable the plugin in the backend.
