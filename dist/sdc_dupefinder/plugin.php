@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: Super speedy product matcher
+Plugin Name: Better Dupefinder by Skincaredupes
 Plugin URI: git://
-Description: A fully scalable product matcher
+Description: Better Dupefinder by Skincaredupes
 Version: 1.0
 Author: Chi Hoang
 Author URI: https://github.com/Tetramatrix 
 Date: 28.02.2022
 
-Note: Put do_shortcode('[super_speedy_product_matcher posts_per_page=6 title="Searched 24,144 products for a match. Possible dupes found..."]') in your theme template. For example rehub theme put it in 
+Note: Put do_shortcode('[scd_dupefinder posts_per_page=6 title="Searched 24,144 products for a match. Possible dupes found..."]') in your theme template. For example rehub theme put it in 
 single-default.php
 */
 
@@ -21,11 +21,11 @@ function scd_scripts() {
 	wp_enqueue_style ( 'scd_dupefinder1',  plugins_url( 'build/index.css', __FILE__ ) );
 }
 
-add_shortcode( 'super_speedy_product_matcher', 'scd_dupefinder_SC' );
+add_shortcode( 'scd_dupefinder', 'scd_dupefinder_SC' );
 /**
  * Registers a shortcode that simply displays a placeholder for our React App.
  */
-function scd_dupefinder_SC( $atts = array(), $content = null , $tag = 'super_speedy_product_matcher' ){
+function scd_dupefinder_SC( $atts = array(), $content = null , $tag = 'scd_dupefinder' ){
 	
 		$args = shortcode_atts( array(
             'title' => '',
@@ -37,9 +37,9 @@ function scd_dupefinder_SC( $atts = array(), $content = null , $tag = 'super_spe
 			  <div id="scd_dupefinder_title"><?php echo $args['title'] ?></div>
         <div id="scd_dupefinder"></div>
         <?php	
-        	wp_enqueue_script( 'super_speedy_product_matcher', plugins_url( 'build/index.js', __FILE__ ), array( 'wp-element' ), time(), true );
+        	wp_enqueue_script( 'scd_dupefinder', plugins_url( 'build/index.js', __FILE__ ), array( 'wp-element' ), time(), true );
         	
-					wp_localize_script( 'super_speedy_product_matcher', 'scd_dupefinder_obj',
+					wp_localize_script( 'scd_dupefinder', 'scd_dupefinder_obj',
 																									          				[ 'ajax_url' => admin_url('admin-ajax.php'),
 																									          					'post_id' =>  get_the_ID(),
 																									          					'posts_per_page' => $args['posts_per_page']
@@ -49,10 +49,10 @@ function scd_dupefinder_SC( $atts = array(), $content = null , $tag = 'super_spe
     <?php return ob_get_clean();
 }
 
-add_action('wp_ajax_dupefinderList', 'matcherCallback');
-add_action('wp_ajax_nopriv_dupefinderList', 'matcherCallback');
+add_action('wp_ajax_dupefinderList', 'dupefinderCallback');
+add_action('wp_ajax_nopriv_dupefinderList', 'dupefinderCallback');
 
-function matcherCallback() {
+function dupefinderCallback() {
   global $wp_query, $post, $wpdb; // wordpress database object
   
   $start = esc_sql($_POST['start']);
