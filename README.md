@@ -4,7 +4,7 @@ A fully scalable WordPress product matcher plugin.
 Installation
 1. Download and save the plugin into the WordPress plugin folder and enable the plugin in the backend.
 
-2. Put <?php echo do_shortcode('[sdc_dupefinder posts_per_page=6 title="Searched 24,144 products for a match. Possible dupes found..."]')?> in your theme template single page.
+2. Put \<?php echo do_shortcode('[sdc_dupefinder posts_per_page=6 title="Searched 24,144 products for a match. Possible dupes found..."]') \?> in your theme template single page.
 For example put it in single-default.php in the rehub theme. That's it. It automatically shows a loading animation and loads matching products into the bottom of the page!
 
 Some highlights:
