@@ -1,48 +1,55 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the body takes up full viewport height */
+  margin: 0;
+}
+
+div.wrapper {
+  text-align: center;
+}
+
 h2 {
   padding: 0px;
   text-decoration: none;
-  font-family:  'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
+  font-family: 'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
   font-size: 24px;
   font-weight: normal;
-  /* color: #7f7f7f; */
-  /* color: rgb(191, 191, 191); */
-  vertical-align:top;
+  vertical-align: top;
 }
 
 h3 {
   padding: 0px;
   text-decoration: underline;
-  font-family:  'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
+  font-family: 'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
   font-size: 18px;
   font-weight: normal;
-  /* color: #7f7f7f; */
-  /* color: rgb(191, 191, 191); */
-  vertical-align:top;
+  vertical-align: top;
 }
 
 p {
-	text-decoration: none;
-  font-family:  'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
+  text-decoration: none;
+  font-family: 'Exo 2', Tahoma, Arial, Helvetica, Verdana, Sans-Serif;
   font-size: 14px;
   font-weight: normal;
-  /* color: #7f7f7f; */
-  /* color: rgb(191, 191, 191); */
   width: 640px;
+  margin: auto; /* Center paragraph text within its container */
 }
 
 img {
-	padding: 0px;
+  padding: 0px;
   margin: 0px;
-  vertical-align:top;
+  vertical-align: top;
 }
 
 img:hover {
-	transform: scale(1.0);
+  transform: scale(1.0);
 }
 
 .img {
   padding: 0px;
   margin: 0px;
-  vertical-align:top;
-  height: 1%;  
+  vertical-align: top;
+  height: 1%;
 }
